@@ -1,9 +1,9 @@
-# Create 2 functions which will reduce computing time by placing values in cache
-# functions will use lexical scoping rules
+# Create 2 functions which will reduce computing time by placing values in cache.
+# functions will use lexical scoping rules to cache the data.
 
 # makeCacheMatrix will take a user inputed matrix and keep it in cache within 
-#the function named makeCacheMatrix. Will return a list of 4 functions, set and get
-#setsolve, getsolve
+#the makeCacheMatrix function. The function will return a list of 4 functions, set, get
+# setsolve and getsolve
 
 makeCacheMatrix <- function(x = matrix()) {
     m <- NULL
@@ -20,8 +20,11 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## cacheSolve is a function which will return a solved matrix inputed through
-#makeCacheMatrix and keep the solved matrix in cache.
+# The following function solves the above matrix 
+# created with the above function. However, it first checks to see if the
+# matrix has already been solved. If so, it gets the solved matrix from the
+# cache and skips the computation. Otherwise, it solves the matrix 
+# and sets the value of the matrix the cache via the setsolve function.
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
